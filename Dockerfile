@@ -8,3 +8,6 @@ RUN apt-get update \
 		&& apt-get update\
 		&& apt-get install -y graylog-collector\
 		&& apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+
+CMD ["bin/graylog-collector", "run", "-f", "/collector.conf"]
